@@ -2,7 +2,7 @@ import React from "react";
 
 const Service = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-36 pl-3 lg:pt-14  lg:pl-16 md:pl-12">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:mt-36 mt-36 pl-3 lg:pt-14  lg:pl-16 md:pl-12">
       <div className="flex items-start justify-center max-w-xs   ">
         <div >
           <img

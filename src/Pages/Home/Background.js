@@ -26,7 +26,7 @@ const Background = () => {
             style={{ height: "1.5px" }}
             className="bg-white lg:w-10 md:w-8 w-6 lg:mt-2 md:mt-5"
           ></div>
-          <h3 className="text-sm mt-3 lg:mt-0">WHY TRAVEL WITH US?</h3>
+          <h3 className="text-sm mt-3 lg:mt-0">WHY ORDER FROM US?</h3>
         </div>
         <h1 className="font-bold lg:text-2xl md:text-2xl text-xl lg:py-4 pt-3 lg:pt-0">
           <span className="badge lg:badge-sm badge-xs"></span> Best Price.

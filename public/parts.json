@@ -1,0 +1,32 @@
+[
+    {
+     "id":1,
+     "img":"https://static.toiimg.com/photo/msid-93436198/93436198.jpg",
+     "price":161.65,
+     "name":"Tire BKT",
+     "Quantity":2,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
+    },
+    {
+     "id":2,
+     "img":"https://i.ebayimg.com/images/g/Th4AAOSw4iRjpS9N/s-l500.jpg",
+     "price":161.65,
+     "name":"MB design rims ",
+     "Quantity":2,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
+    },
+    {
+     "id":3,
+     "img":"https://m.media-amazon.com/images/I/71fuk3YoftL._SY355_.jpg",
+     "price":161.65,
+     "name":"Car Steering",
+     "Quantity":2,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
+    }
+]
