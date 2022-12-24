@@ -2,6 +2,7 @@ import React from 'react';
 import Background from './Background';
 import Parts from './Parts';
 import Service from './Service';
+import Stat from './Stat';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
          <Background />   
          <Service />
          <Parts />
+         <Stat />
         </div>
     );
 };
