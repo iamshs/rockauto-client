@@ -4,7 +4,13 @@ import parts from "../../assets/parts.jpg";
 
 const Order = () => {
   return (
-    <section className="flex items-center lg:justify-around justify-center md:justify-around flex-col lg:flex-row md:flex-row p-3">
+   <section className="lg:pl-16 px-5 md:px-10">
+    <div className="flex items-center justify-start mb-1">
+      <div style={{height:"1.5px"}} className='w-8 mt-2 bg-[#33334D] '></div>
+      <p>HOW IT WORKS</p>
+    </div>
+    <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-black">Easiest way to Deal with us</h1>
+     <div className="flex items-center lg:justify-around justify-center md:justify-around flex-col lg:flex-row md:flex-row ">
       <div>
         <img className="lg:max-w-lg max-w-sm" src={parts} alt="" />
       </div>
@@ -46,7 +52,8 @@ const Order = () => {
         </div>
         {/* end-3 */}
       </div>
-    </section>
+    </div>
+   </section>
   );
 };
 
