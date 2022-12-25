@@ -2,7 +2,7 @@ import React from "react";
 
 const Stat = () => {
   return (
-    <section className="bg-neutral flex items-center justify-around lg:h-44 md:h-36 h-24 lg:my-24 my-16 text-center ">
+    <section className="bg-neutral flex items-center justify-around lg:h-44 md:h-36 h-24 lg:mt-10 lg:mb-20 my-16 text-center ">
       <div>
         <h1 className="lg:text-5xl md:text-4xl md:font-medium lg:font-medium font-semibold lg:tracking-wide ">
           15,000 <span className="text-primary">+</span>{" "}

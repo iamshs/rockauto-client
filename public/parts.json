@@ -28,5 +28,35 @@
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
+    },
+    {
+     "id":4,
+     "img":"https://carorbis.com/wp-content/uploads/2021/10/6Grills-01-800x356.jpg",
+     "price":161.65,
+     "name":"Grilles",
+     "Quantity":10,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
+    },
+    {
+     "id":5,
+     "img":"https://carorbis.com/wp-content/uploads/2021/10/12Tail-lights-600x400.png",
+     "price":161.65,
+     "name":"Tail Lights ",
+     "Quantity":2,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
+    },
+    {
+     "id":6,
+     "img":"https://img.freepik.com/premium-photo/image-interior-rearview-mirrors-car-part-isolated-white-background_167862-2002.jpg?w=2000",
+     "price":161.65,
+     "name":"Rear View Mirror",
+     "Quantity":2,
+     "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+     "condition":"New"
+
     }
 ]
