@@ -29,11 +29,11 @@ const Background = () => {
           <h3 className="text-sm mt-3 lg:mt-0">WHY ORDER FROM US?</h3>
         </div>
         <h1 className="font-bold lg:text-2xl md:text-2xl text-xl lg:py-4 pt-3 lg:pt-0">
-          <span className="badge lg:badge-sm badge-xs"></span> Best Price.
+          <span className="badge lg:badge-sm badge-xs bg-base-100"></span> Best Price.
         </h1>
         <h1 className="font-bold lg:text-2xl md:text-2xl text-xl">
           {" "}
-          <span className="badge lg:badge-sm badge-xs"></span> Quality Service.
+          <span className="badge lg:badge-sm badge-xs bg-base-100"></span> Quality Service.
         </h1>
       </div>
     </section>
