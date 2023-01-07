@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Part = ({p}) => {
-    const {id,name,img,condition,price} = p
+    const {_id,name,img,condition,price} = p
     return (
         <div className='bg-[#FFFFFF] lg:w-[20rem] md:w-[20rem] w-full rounded-lg  px-12 py-2 border border-secondary'>
            <img className='w-[13rem] h-[202px] ' src={img} alt='' /> 

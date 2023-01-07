@@ -17,7 +17,7 @@ const Parts = () => {
           <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold text-black mb-8'>Best Price. Quality Service.</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mt-10 '>
             {
-                parts.slice(0,6).map(p=><Part key={p.id} 
+                parts.slice(0,6).map(p=><Part key={p._id} 
                 p={p}
                 ></Part>)
             }

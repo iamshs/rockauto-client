@@ -14,6 +14,11 @@ const Navbar = () => {
               isActive ? 'font-bold text-secondary text-lg' : 'text-lg font-semibold'
             }>About</NavLink>
       </li>
+      <li>
+        <NavLink  to={"/register"}  className={({ isActive }) =>
+              isActive ? 'font-bold text-secondary text-lg' : 'text-lg font-semibold'
+            }>Sign Up</NavLink>
+      </li>
     </>
   );
 

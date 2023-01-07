@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 import Background from './Background';
 import Order from './Order';
 import Parts from './Parts';
@@ -13,6 +14,7 @@ const Home = () => {
          <Parts />
          <Stat />
          <Order />
+         <Footer />
         </div>
     );
 };
