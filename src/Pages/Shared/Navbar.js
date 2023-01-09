@@ -1,23 +1,36 @@
 import React from "react";
+import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
+import Loading from "./Loading";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+  if (loading){
+    <Loading />
+  }
+  const logout = () => {
+    signOut(auth);
+  };
   const navList = (
     <>
       <li>
         <NavLink  to={"/"}  className={({ isActive }) =>
-              isActive ? 'font-bold text-secondary text-lg' : 'text-lg font-semibold'
-            }>Home</NavLink>
+              isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
+            }>HOME</NavLink>
       </li>
       <li>
         <NavLink  to={"/about"}  className={({ isActive }) =>
-              isActive ? 'font-bold text-secondary text-lg' : 'text-lg font-semibold'
-            }>About</NavLink>
+              isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
+            }>ABOUT</NavLink>
       </li>
       <li>
-        <NavLink  to={"/register"}  className={({ isActive }) =>
-              isActive ? 'font-bold text-secondary text-lg' : 'text-lg font-semibold'
-            }>Sign Up</NavLink>
+       {
+        user ? <button onClick={logout} className="btn btn-ghost text-bold text-md">Sign Out</button>:  <NavLink  to={"/register"}  className={({ isActive }) =>
+        isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
+      }>SIGN UP</NavLink>
+       }
       </li>
     </>
   );
