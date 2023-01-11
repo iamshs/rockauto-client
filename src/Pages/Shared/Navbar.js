@@ -7,8 +7,8 @@ import Loading from "./Loading";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  if (loading){
-    <Loading />
+  if (loading) {
+    <Loading />;
   }
   const logout = () => {
     signOut(auth);
@@ -16,21 +16,46 @@ const Navbar = () => {
   const navList = (
     <>
       <li>
-        <NavLink  to={"/"}  className={({ isActive }) =>
-              isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
-            }>HOME</NavLink>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+          HOME
+        </NavLink>
       </li>
       <li>
-        <NavLink  to={"/about"}  className={({ isActive }) =>
-              isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
-            }>ABOUT</NavLink>
+        <NavLink
+          to={"/contact"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+          CONTACT
+        </NavLink>
       </li>
       <li>
-       {
-        user ? <button onClick={logout} className="btn btn-ghost text-bold text-md">Sign Out</button>:  <NavLink  to={"/register"}  className={({ isActive }) =>
-        isActive ? 'font-bold text-secondary text-sm' : 'text-sm font-semibold'
-      }>SIGN UP</NavLink>
-       }
+        {user ? (
+          <button onClick={logout} className="btn btn-ghost text-bold text-md">
+            Sign Out
+          </button>
+        ) : (
+          <NavLink
+            to={"/register"}
+            className={({ isActive }) =>
+              isActive
+                ? "font-bold text-secondary text-sm"
+                : "text-sm font-semibold"
+            }
+          >
+            SIGN UP
+          </NavLink>
+        )}
       </li>
     </>
   );
@@ -57,10 +82,9 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52"
           >
-           {navList}
-          
+            {navList}
           </ul>
         </div>
         <Link to={"/"} className="btn btn-ghost normal-case font-bold text-2xl">

@@ -143,7 +143,7 @@ const Register = () => {
           <p>
             Already have an account ?
             <span className="font-semibold text-md">
-              <Link to={"/register"}> please Login</Link>
+              <Link to={"/login"}> please Login</Link>
             </span>
           </p>
           <div className="divider">OR</div>
