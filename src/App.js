@@ -8,6 +8,7 @@ import RequireAuth from './Pages/Authentication/RequireAuth';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
+import OrderParts from './Pages/Home/OrderParts';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       </Route>
       <Route path='/register' element={<Register />} ></Route>
       <Route path='/login' element={<Login />} ></Route>
+      <Route path='/orderParts/:_id' element={<OrderParts />} ></Route>
      </Routes>
      <ToastContainer />
     </div>
