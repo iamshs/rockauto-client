@@ -9,6 +9,7 @@ import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
 import OrderParts from './Pages/Home/OrderParts';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
       <Route path='/register' element={<Register />} ></Route>
       <Route path='/login' element={<Login />} ></Route>
       <Route path='/orderParts/:_id' element={<OrderParts />} ></Route>
+      <Route path='*' element={<NotFound />}/>
+
      </Routes>
      <ToastContainer />
     </div>
