@@ -7,6 +7,8 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
+import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,6 +23,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [token] = useToken(user || gUser)
+
 
   if (error || gError) {
     signInError = (
@@ -32,13 +36,14 @@ const Login = () => {
     return <Loading />;
   }
 
-  if (user || gUser) {
+  if (token) {
     navigate(from, { replace: true });
   }
 
   const onSubmit = (data) => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
+    toast('Logged In')
   };
   return (
     <div className="flex items-center h-screen justify-center">
@@ -117,8 +122,8 @@ const Login = () => {
           </form>
           <p>
             New to rockAuto ?
-            <span className="font-semibold text-md">
-              <Link to={"/register"}> create new account</Link>
+            <span className="font-semibold text-md text-primary">
+              <Link to={"/register"}> Create a new account</Link>
             </span>
           </p>
           <div className="divider">OR</div>

@@ -42,6 +42,18 @@ const Dashboard = () => {
          ADD PRODUCT
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to={"/dashboard/allUsers"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+         ALL USERS
+        </NavLink>
+      </li>
           </ul>
         </div>
       </div>

@@ -13,7 +13,8 @@ import NotFound from "./Pages/Shared/NotFound";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import AddProduct from "./Pages/Dashboard/AddProduct";
-import Index from "./Pages/Dashboard/Index";
+import Users from "./Pages/Dashboard/Users";
+import DashIndex from "./Pages/Dashboard/DashIndex";
 
 function App() {
   return (
@@ -24,9 +25,7 @@ function App() {
         <Route
           path="/contact"
           element={
-            <RequireAuth>
-              <Contact />
-            </RequireAuth>
+           <Contact />
           }
         ></Route>
         <Route
@@ -37,16 +36,17 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Index />} />
+          <Route index element={<DashIndex />} />
           <Route path="/dashboard/myProfile" element={ <MyProfile /> } />
           <Route path="/dashboard/addProduct" element={ <AddProduct /> } />
+          <Route path="/dashboard/allUsers" element={ <Users /> } />
         </Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/orderParts/:_id" element={<OrderParts />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ToastContainer />
+      <ToastContainer autoClose={3000} theme="dark" />
     </div>
   );
 }

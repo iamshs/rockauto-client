@@ -5,9 +5,11 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
+import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -24,29 +26,39 @@ const Register = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
-
+  const navigate = useNavigate()
+  const [token] = useToken(user || gUser)
   let signInError;
+
+
   if (error || gError || uError) {
     signInError = (
       <p className="text-red-500">{error?.message || gError?.message} </p>
     );
   }
+
+
   if (loading || gLoading || updating) {
     return <Loading />;
   }
-  if (user || gUser) {
-    console.log(user || gUser);
+
+
+  if (token) {
+    navigate('/dashboard')
+    
   }
   const onSubmit = async (data) => {
    await createUserWithEmailAndPassword(data.email, data.password);
+   toast("created a new user")
    await updateProfile({ displayName: data.name })
-   console.log('update done')
+  //  data.target.reset()
+   
   };
   return (
     <div className="flex items-center h-screen justify-center">
       <div className="card w-96   bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">Sign Up</h2>
+          <h2 className="text-2xl font-bold text-center">SIGN UP</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
@@ -142,8 +154,8 @@ const Register = () => {
           </form>
           <p>
             Already have an account ?
-            <span className="font-semibold text-md">
-              <Link to={"/login"}> please Login</Link>
+            <span className="font-semibold text-md text-primary">
+              <Link to={"/login"}> Please Login</Link>
             </span>
           </p>
           <div className="divider">OR</div>

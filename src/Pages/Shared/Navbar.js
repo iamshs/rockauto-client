@@ -40,7 +40,8 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink
+        {
+          user && <NavLink
           to={"/dashboard"}
           className={({ isActive }) =>
             isActive
@@ -50,6 +51,7 @@ const Navbar = () => {
         >
          DASHBOARD
         </NavLink>
+        }
       </li>
       <li>
         {user ? (
@@ -58,14 +60,14 @@ const Navbar = () => {
           </button>
         ) : (
           <NavLink
-            to={"/register"}
+            to={"/login"}
             className={({ isActive }) =>
               isActive
                 ? "font-bold text-secondary text-sm"
                 : "text-sm font-semibold"
             }
           >
-            SIGN UP
+            SIGN IN
           </NavLink>
         )}
       </li>
