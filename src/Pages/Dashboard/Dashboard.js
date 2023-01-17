@@ -12,12 +12,12 @@ const Dashboard = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content ">
-            <h1 className="text-2xl font-bold">Welcome to Dashboard</h1>
+           <div className=" bg-[#EBECEF] py-[1rem] "> <h1 className="text-2xl font-bold">DASHBOARD</h1></div>
           <Outlet />
         </div>
         <div className="drawer-side">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+          <ul className="menu p-4 w-56 bg-[#EBECEF] text-base-content">
           <li>
         <NavLink
           to={"/dashboard/myProfile"}
