@@ -11,6 +11,7 @@ import Loading from "../Shared/Loading";
 import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
 
+
 const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
@@ -47,6 +48,7 @@ const Register = () => {
     navigate('/dashboard')
     
   }
+  
   const onSubmit = async (data) => {
    await createUserWithEmailAndPassword(data.email, data.password);
    toast("created a new user")

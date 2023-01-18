@@ -1,7 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
   return (
     <div>
      
@@ -42,7 +47,7 @@ const Dashboard = () => {
          ADD PRODUCT
         </NavLink>
       </li>
-      <li>
+     { admin &&  <li>
         <NavLink
           to={"/dashboard/allUsers"}
           className={({ isActive }) =>
@@ -54,6 +59,7 @@ const Dashboard = () => {
          ALL USERS
         </NavLink>
       </li>
+      }
           </ul>
         </div>
       </div>
