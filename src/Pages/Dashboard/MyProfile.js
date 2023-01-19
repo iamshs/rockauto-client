@@ -62,7 +62,7 @@ const MyProfile = () => {
        })
     }
     return (
-        <div>
+ 
            
            <div className="flex items-center justify-center   ">
       <form
@@ -93,7 +93,7 @@ const MyProfile = () => {
           value={user.email}
           disabled
           className="input input-bordered input-primary w-full max-w-xs mb-1 "
-          {...register("name")}
+          {...register("email")}
         />
         
         <input
@@ -118,7 +118,7 @@ const MyProfile = () => {
         />
       </form>
     </div> 
-        </div>
+    
     );
 };
 

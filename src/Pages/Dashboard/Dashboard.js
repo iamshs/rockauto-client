@@ -35,6 +35,18 @@ const Dashboard = () => {
           MY PROFILE
         </NavLink>
       </li>
+          <li>
+        <NavLink
+          to={"/dashboard/reviewUs"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+          REVIEW US
+        </NavLink>
+      </li>
       <li>
         <NavLink
           to={"/dashboard/addProduct"}

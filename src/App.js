@@ -16,6 +16,7 @@ import AddProduct from "./Pages/Dashboard/AddProduct";
 import Users from "./Pages/Dashboard/Users";
 import DashIndex from "./Pages/Dashboard/DashIndex";
 import RequireAdmin from "./Pages/Dashboard/RequireAdmin";
+import ReviewUs from "./Pages/Dashboard/ReviewUs";
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
         >
           <Route index element={<DashIndex />} />
           <Route path="/dashboard/myProfile" element={ <MyProfile /> } />
-          <Route path="/dashboard/addProduct" element={ <AddProduct /> } />
+          <Route path="/dashboard/reviewUs" element={ <ReviewUs /> } />
+          <Route path="/dashboard/addProduct" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
           <Route path="/dashboard/allUsers" element={ <RequireAdmin> <Users /> </RequireAdmin> } />
         </Route>
         <Route path="/register" element={<Register />}></Route>
