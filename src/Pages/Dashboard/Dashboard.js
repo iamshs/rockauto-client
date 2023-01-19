@@ -17,7 +17,7 @@ const Dashboard = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content ">
-           <div className=" bg-[#EBECEF] py-[1rem] "> <h1 className="text-2xl font-bold">DASHBOARD</h1></div>
+           <div className=" bg-[#EBECEF] py-[1rem]  "> <h1 className="text-2xl font-bold">DASHBOARD</h1></div>
           <Outlet />
         </div>
         <div className="drawer-side">
