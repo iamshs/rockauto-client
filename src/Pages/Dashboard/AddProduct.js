@@ -5,11 +5,7 @@ import Loading from "../Shared/Loading";
 
 const AddProduct = () => {
   const [loading , setLoading] = useState(false)
-  const {
-    register,
-    handleSubmit,
-    reset,
-  } = useForm();
+  const {register,handleSubmit , reset} = useForm();
   const imageStorageKey='49a5d838e4a2bd75ea6e6064937e635c';
   
  if (loading){
@@ -18,8 +14,7 @@ const AddProduct = () => {
 
   const onSubmit = async (data) => {
 
-  const image = data.img[0]
-
+    const image = data.img[0]
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
@@ -50,11 +45,11 @@ const AddProduct = () => {
       })
       .then(res => res.json())
       .then( product =>{
-        console.log(product)
+      
         setLoading(false)
         if (product.acknowledged === true){
           toast.success('Parts Added Successfully')
-          data.reset()
+          reset()
           
         }
         else{
@@ -76,47 +71,47 @@ const AddProduct = () => {
         <input
           type="text"
           placeholder="Parts Name"
-          className="input input-bordered input-accent w-full max-w-xs mb-1 "
+          className="input input-bordered input-primary w-full max-w-xs mb-1 "
           {...register("name")}
         />
         
         <input
           type="text"
           placeholder="Price"
-          className="input input-bordered input-accent w-full max-w-xs my-1"
+          className="input input-bordered input-primary w-full max-w-xs my-1"
           {...register("price")}
         />
         
         <input
           type="text"
           placeholder="Quantity "
-          className="input input-bordered input-accent w-full max-w-xs my-1 "
+          className="input input-bordered input-primary w-full max-w-xs my-1 "
           {...register("quantity")}
         />
         
         <input
           type="text"
           placeholder="Condition"
-          className="input input-bordered input-accent w-full max-w-xs my-1"
+          className="input input-bordered input-primary w-full max-w-xs my-1"
           {...register("condition")}
         />
         
         <textarea
-          className="textarea textarea-accent"
+          className="textarea textarea-primary"
           placeholder="Parts Details"
           {...register("details")}
         ></textarea>
        
         <input
           type="file"
-          className="file-input file-input-bordered file-input-accent w-full max-w-xs my-1 "
+          className="file-input file-input-bordered file-input-neutral w-full max-w-xs my-1 "
           {...register("img")}
         />
        
         <input
           type="submit"
           value={"add"}
-          className="btn btn-accent w-full max-w-xs my-2 "
+          className="btn btn-neutral w-full max-w-xs my-2 "
         />
       </form>
     </div>
