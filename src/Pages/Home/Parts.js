@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const Parts = () => {
 
-    const {data , isLoading , isError,error} = useQuery({
+    const {data:parts , isLoading , isError,error} = useQuery({
       queryKey:['parts'],
       queryFn: () =>
         fetch("http://localhost:5000/parts")
@@ -22,7 +22,7 @@ const Parts = () => {
       toast.error(`${error.message}`)
     }
     return (
-        <section className='lg:pl-16 px-5 md:px-10 py-14'>
+        <section className='lg:pl-16 px-5 md:px-10 py-14 max-w-8xl'>
           <div className='flex items-center lg:justify-start md:justify-start mt-6  mb-1 '>
           <div
             style={{ height: "1px" }}
@@ -34,7 +34,7 @@ const Parts = () => {
           <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold text-black mb-8'>Best Price. Quality Service.</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mt-10 '>
             {
-                data.slice(0,6).map(p=><Part key={p._id} 
+                parts.slice(0,6).map(p=><Part key={p._id} 
                 p={p}
                 ></Part>)
             }

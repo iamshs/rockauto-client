@@ -9,7 +9,7 @@ const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <footer className="mt-16">
+    <footer className="mt-16 max-w-8xl">
       <section className="bg-[#EBECEF] lg:p-10 p-5 flex  lg:flex-row md:flex-row justify-between ">
         {/* grid--1 */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:w-[65%] md:w-[65%] w-[55%]  ">

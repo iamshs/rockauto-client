@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [user] = useAuthState(auth)
   const [admin] = useAdmin(user)
   return (
-    <div>
+    <div className="max-w-8xl">
      
       <div className="drawer drawer-mobile">
         <input

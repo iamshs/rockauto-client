@@ -4,7 +4,7 @@ import bg from "../../assets/homeBg.jpg";
 const Background = () => {
   return (
     <section
-      className="bg-cover lg:bg-fixed   bg-center bg-no-repeat flex lg:items-center md:items-center flex-col lg:flex-row md:flex-row lg:justify-around md:justify-around  p-4 lg:p-0 "
+      className="bg-cover lg:bg-fixed max-w-8xl  bg-center bg-no-repeat flex lg:items-center md:items-center flex-col lg:flex-row md:flex-row lg:justify-around md:justify-around  p-4 lg:p-0 "
       style={{
         backgroundImage: `url(${bg}`,
         backgroundColor: "#cccccc",
