@@ -41,9 +41,11 @@ const sendOrder = e => {
     const order = {
         name:user?.displayName ,
         email : user?.email ,
+        partsName: part.name ,
         mobile: e.target.mobile.value ,
         address : e.target.address.value ,
-        quantity : e.target.quantity.value
+        quantity : e.target.quantity.value,
+        parts: part.name
     }
 
     console.log(order)

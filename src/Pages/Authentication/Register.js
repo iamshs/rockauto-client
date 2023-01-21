@@ -45,7 +45,7 @@ const Register = () => {
 
 
   if (token) {
-    navigate('/dashboard')
+    navigate('/dashboard/myProfile')
     
   }
   

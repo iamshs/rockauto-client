@@ -31,9 +31,9 @@ const User = ({ u , i , refetch }) => {
     <tr>
     <th>{i+1} </th>
     <td className="text-[13px] lg:text-[18px] md:text-[16px]">{email} </td>
-    <td><button className="btn btn-xs text-[8px] p-1 lg:text-[12px] bg-error border-none">delete</button></td>
+    <td><button className="btn btn-xs text-[8px] px-2  lg:text-[10px] bg-error border-none">Remove</button></td>
     <td> {
-      role !== 'admin' && <button className="btn btn-xs p-1 text-[8px] lg:text-[12px] " onClick={makeAdmin} >make admin</button>
+      role !== 'admin' && <button className="btn btn-xs px-2  text-[8px] lg:text-[10px] " onClick={makeAdmin} >make admin</button>
       } </td>
   </tr>
   );

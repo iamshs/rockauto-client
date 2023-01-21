@@ -17,6 +17,8 @@ import Users from "./Pages/Dashboard/Users";
 import DashIndex from "./Pages/Dashboard/DashIndex";
 import RequireAdmin from "./Pages/Dashboard/RequireAdmin";
 import ReviewUs from "./Pages/Dashboard/ReviewUs";
+import ManageOrder from "./Pages/Dashboard/ManageOrder";
+
 
 function App() {
   return (
@@ -43,13 +45,15 @@ function App() {
           <Route path="/dashboard/reviewUs" element={ <ReviewUs /> } />
           <Route path="/dashboard/addProduct" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
           <Route path="/dashboard/allUsers" element={ <RequireAdmin> <Users /> </RequireAdmin> } />
+          <Route path="/dashboard/orders" element={ <RequireAdmin> <ManageOrder /> </RequireAdmin> } />
+          
         </Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/orderParts/:_id" element={<OrderParts />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ToastContainer autoClose={3000} theme="dark" />
+      <ToastContainer autoClose={3000} theme="colored" />
     </div>
   );
 }

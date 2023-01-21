@@ -1,19 +1,27 @@
-import React from 'react';
+import { Rating } from '@mui/material';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useProfile from '../../hooks/useProfile';
 
 
 const ReviewUs = () => {
     const {register,handleSubmit , reset} = useForm();
     const [user] = useAuthState(auth)
+    const [value , setValue] = useState(null)
+    const [profile] = useProfile(user)
+
+    console.log(profile)
+
     const onSubmit = async data =>{
    
      const review = {
         name : user.displayName ,
-        rate: data.rate,
-        comment: data.comment
+        rate: value,
+        comment: data.comment,
+        avatar : profile.photoURL
      }
      fetch('http://localhost:5000/review' , {
         method :'POST' ,
@@ -29,6 +37,7 @@ const ReviewUs = () => {
         if(result.insertedId){
             toast('Thank You for your Review')
             reset()
+            setValue(null)
         }
      })
     }
@@ -40,12 +49,18 @@ const ReviewUs = () => {
          REVIEW US__
             </h2>
             <label className='label'>
-                <span className="label-text font-bold">Rate us between 1-5</span>
+                <span className="label-text text-lg font-bold">Rate us between 1-5</span>
             </label>
-            <input
-           type="number" min={1} max={5} className="input input-bordered input-primary w-full max-w-xs my-3 "
-          {...register("rate")} defaultValue={5} />
-         <textarea className="textarea textarea-primary text-lg" rows="5" cols="30" maxlength={"500"} placeholder="Your Comment" 
+           <Rating
+        name="simple-controlled"
+        size='large'
+        className='mb-2'
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
+         <textarea className="textarea textarea-primary text-lg" rows="5" cols="30"  placeholder="Your Comment" 
          {...register("comment")}>
 
          </textarea>

@@ -5,8 +5,8 @@ import Loading from '../Shared/Loading';
 import User from './User';
 
 const Users = () => {
-    const {data , isLoading , isError,error,refetch} = useQuery({
-        queryKey:['parts'],
+    const {data : users , isLoading , isError,error,refetch} = useQuery({
+        queryKey:['user'],
         queryFn: () =>
           fetch("http://localhost:5000/user")
           .then(res=>res.json())
@@ -35,7 +35,7 @@ const Users = () => {
     <tbody>
      
      {
-        data.map((u,i)=><User key={u._id}
+        users.map((u,i)=><User key={u._id}
         u={u}
         i={i}
         refetch={refetch}

@@ -47,7 +47,7 @@ const Dashboard = () => {
           REVIEW US
         </NavLink>
       </li>
-      <li>
+      { admin &&  <li>
         <NavLink
           to={"/dashboard/addProduct"}
           className={({ isActive }) =>
@@ -59,6 +59,7 @@ const Dashboard = () => {
          ADD PRODUCT
         </NavLink>
       </li>
+      }
      { admin &&  <li>
         <NavLink
           to={"/dashboard/allUsers"}
@@ -72,6 +73,20 @@ const Dashboard = () => {
         </NavLink>
       </li>
       }
+     { admin &&  <li>
+        <NavLink
+          to={"/dashboard/orders"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+         MANAGE ORDERS
+        </NavLink>
+      </li>
+      }
+    
           </ul>
         </div>
       </div>
