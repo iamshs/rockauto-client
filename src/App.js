@@ -18,6 +18,8 @@ import DashIndex from "./Pages/Dashboard/DashIndex";
 import RequireAdmin from "./Pages/Dashboard/RequireAdmin";
 import ReviewUs from "./Pages/Dashboard/ReviewUs";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
+import YourOrder from "./Pages/Dashboard/YourOrder";
+
 
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
         >
           <Route index element={<DashIndex />} />
           <Route path="/dashboard/myProfile" element={ <MyProfile /> } />
+          <Route path="/dashboard/yourOrder" element={ <YourOrder /> } />
           <Route path="/dashboard/reviewUs" element={ <ReviewUs /> } />
           <Route path="/dashboard/addProduct" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
           <Route path="/dashboard/allUsers" element={ <RequireAdmin> <Users /> </RequireAdmin> } />

@@ -17,7 +17,7 @@ const Dashboard = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content ">
-           <div className=" bg-[#EBECEF] py-[1rem]  "> <h1 className="text-2xl font-bold">DASHBOARD</h1></div>
+           <div className=" bg-[#EBECEF] py-[1rem]  "> <h1 className="text-2xl text-center lg:text-start md:text-start font-bold">DASHBOARD</h1></div>
           <Outlet />
         </div>
         <div className="drawer-side">
@@ -35,6 +35,19 @@ const Dashboard = () => {
           MY PROFILE
         </NavLink>
       </li>
+          <li>
+        <NavLink
+          to={"/dashboard/yourOrder"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+          YOUR ORDER
+        </NavLink>
+      </li>
+         
           <li>
         <NavLink
           to={"/dashboard/reviewUs"}
