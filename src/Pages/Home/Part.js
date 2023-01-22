@@ -17,7 +17,7 @@ const navigate = useNavigate()
       </h2>
       <h1 className="lg:text-2xl md:text-2xl text-xl mt-4 font-bold text-black">
         {" "}
-        Price:$ {price}{" "}
+        Price:$ {price}
       </h1>
       <h3 className="text-md font-semibold">
         Condition: <span className="text-sm font-normal"> {condition} </span>

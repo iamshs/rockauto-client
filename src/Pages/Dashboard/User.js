@@ -1,8 +1,10 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const User = ({ u , i , refetch }) => {
+const User = ({ u , i , refetch ,setDeleteUser }) => {
+
   const { email , role } = u;
+
 
   const makeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -31,10 +33,16 @@ const User = ({ u , i , refetch }) => {
     <tr>
     <th>{i+1} </th>
     <td className="text-[13px] lg:text-[18px] md:text-[16px]">{email} </td>
-    <td><button className="btn btn-xs text-[8px] px-2  lg:text-[10px] bg-error border-none">Remove</button></td>
+    <td>
+    <label htmlFor="user-modal"
+    onClick={() => setDeleteUser(u)}
+    className="btn btn-xs text-[8px] px-2  lg:text-[10px] bg-error border-none">Remove</label>
+      
+      </td>
     <td> {
       role !== 'admin' && <button className="btn btn-xs px-2  text-[8px] lg:text-[10px] " onClick={makeAdmin} >make admin</button>
       } </td>
+      <td></td>
   </tr>
   );
 };

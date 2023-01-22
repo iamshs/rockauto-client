@@ -1,60 +1,54 @@
 [
     {
-     "_id":1,
      "img":"https://static.toiimg.com/photo/msid-93436198/93436198.jpg",
      "price":161.65,
      "name":"Tire BKT",
-     "Quantity":2,
+     "quantity":280,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
     },
     {
-     "_id":2,
      "img":"https://i.ebayimg.com/images/g/Th4AAOSw4iRjpS9N/s-l500.jpg",
      "price":161.65,
      "name":"MB design rims ",
-     "Quantity":2,
+     "quantity":280,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
     },
     {
-     "_id":3,
      "img":"https://m.media-amazon.com/images/I/71fuk3YoftL._SY355_.jpg",
      "price":161.65,
      "name":"Car Steering",
-     "Quantity":2,
+     "quantity":280,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
     },
     {
-     "_id":4,
      "img":"https://carorbis.com/wp-content/uploads/2021/10/6Grills-01-800x356.jpg",
      "price":161.65,
      "name":"Grilles",
-     "Quantity":10,
+     "quantity":1800,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
     },
     {
-     "_id":5,
      "img":"https://carorbis.com/wp-content/uploads/2021/10/12Tail-lights-600x400.png",
      "price":161.65,
      "name":"Tail Lights ",
-     "Quantity":2,
+     "quantity":780,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
     },
     {
-     "_id":6,
      "img":"https://img.freepik.com/premium-photo/image-interior-rearview-mirrors-car-part-isolated-white-background_167862-2002.jpg?w=2000",
      "price":161.65,
      "name":"Rear View Mirror",
-     "Quantity":2,
+     "quantity":500,
      "details":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
      "condition":"New"
 
