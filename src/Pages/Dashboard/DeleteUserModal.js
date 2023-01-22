@@ -17,7 +17,7 @@ const handleUserDelete = email =>{
     .then( data => {
         console.log(data)
         if(data.deletedCount){
-            toast.error('An User has been Deleted Successfully')
+            toast.error('An User has been Removed Successfully')
             setDeleteUser(null)
             refetch()
         }

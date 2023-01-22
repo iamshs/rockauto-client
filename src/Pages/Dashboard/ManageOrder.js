@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../Shared/Loading';
 import OrderRows from './OrderRows';
+import ManageOrderDeleteModal from './ManageOrderDeleteModal';
 
 const ManageOrder = () => {
-    const {data : order , isLoading } = useQuery({ queryKey: ['orders'], queryFn: () => fetch('http://localhost:5000/orders')
+  const [deleteManageOrder , setDeleteManageOrder] = useState(null)
+    const {data : order , isLoading ,refetch } = useQuery({ queryKey: ['orders'], queryFn: () => fetch('http://localhost:5000/orders')
      .then(res=>res.json())
 })
 
@@ -29,12 +31,21 @@ if(isLoading){
     </thead> 
     <tbody>
       {
-        order.map( (o,i) => <OrderRows key={o._id} o={o} i={i} ></OrderRows>)
+        order.map( (o,i) => <OrderRows key={o._id} o={o} i={i}
+        setDeleteManageOrder = {setDeleteManageOrder}
+        ></OrderRows>)
       }
       
     </tbody> 
    
   </table>
+  {
+    deleteManageOrder && <ManageOrderDeleteModal
+    setDeleteManageOrder = {setDeleteManageOrder}
+    refetch = {refetch}
+    deleteManageOrder = {deleteManageOrder}
+    />
+  }
 </div>
     );
 };

@@ -1,26 +1,20 @@
 import React from 'react';
-import { useQuery } from '@tanstack/react-query';
 import Part from './Part';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
+import useParts from '../../hooks/useParts';
 
 
 const Parts = () => {
 
-    const {data:parts , isLoading , isError,error} = useQuery({
-      queryKey:['parts'],
-      queryFn: () =>
-        fetch("http://localhost:5000/parts")
-        .then(res=>res.json())
-      
-    })
+  const [parts , isLoading , isError,error] = useParts()
 
-    if (isLoading){
-      return <Loading />
-    }
-    if (isError){
-      toast.error(`${error.message}`)
-    }
+  if (isLoading){
+    return <Loading />
+  }
+ if (isError){
+  toast.error(`${error.message}`)
+ }
     return (
         <section className='lg:pl-16 px-5 md:px-10 py-14 max-w-8xl'>
           <div className='flex items-center lg:justify-start md:justify-start mt-6  mb-1 '>

@@ -20,6 +20,7 @@ const OrderParts = () => {
 const handleDisable = e =>{
     const validOrder = e.target.value
     const maxQuantity = part.quantity
+    
 
     if(validOrder < 5) {
         setIsDisabled(true)
@@ -36,7 +37,9 @@ const handleDisable = e =>{
 
 //sending order
 
+
 const sendOrder = e => {
+   const availableQuantity = e.target.quantity.value
   e.preventDefault()
     const order = {
         name:user?.displayName ,
@@ -44,7 +47,7 @@ const sendOrder = e => {
         partsName: part.name ,
         mobile: e.target.mobile.value ,
         address : e.target.address.value ,
-        quantity : e.target.quantity.value,
+        quantity : JSON.parse(availableQuantity) ,
         partsImg : part.img
     }
 

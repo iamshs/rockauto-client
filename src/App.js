@@ -19,6 +19,7 @@ import RequireAdmin from "./Pages/Dashboard/RequireAdmin";
 import ReviewUs from "./Pages/Dashboard/ReviewUs";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import YourOrder from "./Pages/Dashboard/YourOrder";
+import ManageParts from "./Pages/Dashboard/ManageParts";
 
 
 
@@ -44,11 +45,12 @@ function App() {
         >
           <Route index element={<DashIndex />} />
           <Route path="/dashboard/myProfile" element={ <MyProfile /> } />
-          <Route path="/dashboard/yourOrder" element={ <YourOrder /> } />
+          <Route path="/dashboard/myOrder" element={ <YourOrder /> } />
           <Route path="/dashboard/reviewUs" element={ <ReviewUs /> } />
-          <Route path="/dashboard/addProduct" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
+          <Route path="/dashboard/addParts" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
           <Route path="/dashboard/allUsers" element={ <RequireAdmin> <Users /> </RequireAdmin> } />
           <Route path="/dashboard/orders" element={ <RequireAdmin> <ManageOrder /> </RequireAdmin> } />
+          <Route path="/dashboard/manageParts" element={ <RequireAdmin> <ManageParts /> </RequireAdmin> } />
           
         </Route>
         <Route path="/register" element={<Register />}></Route>

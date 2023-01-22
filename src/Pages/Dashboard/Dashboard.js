@@ -37,14 +37,14 @@ const Dashboard = () => {
       </li>
           <li>
         <NavLink
-          to={"/dashboard/yourOrder"}
+          to={"/dashboard/myOrder"}
           className={({ isActive }) =>
             isActive
               ? "font-bold text-secondary text-sm"
               : "text-sm font-semibold"
           }
         >
-          YOUR ORDER
+          MY ORDERS
         </NavLink>
       </li>
          
@@ -62,14 +62,27 @@ const Dashboard = () => {
       </li>
       { admin &&  <li>
         <NavLink
-          to={"/dashboard/addProduct"}
+          to={"/dashboard/addParts"}
           className={({ isActive }) =>
             isActive
               ? "font-bold text-secondary text-sm"
               : "text-sm font-semibold"
           }
         >
-         ADD PRODUCT
+         ADD PARTS
+        </NavLink>
+      </li>
+      }
+      { admin &&  <li>
+        <NavLink
+          to={"/dashboard/manageParts"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+         MANAGE PARTS
         </NavLink>
       </li>
       }

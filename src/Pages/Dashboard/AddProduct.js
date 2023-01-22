@@ -29,8 +29,8 @@ const AddProduct = () => {
       const img = result.data.url ;
       const parts = {
         name : data.name ,
-        price : data.price ,
-        quantity : data.quantity ,
+        price : JSON.parse(data.price) ,
+        quantity : JSON.parse(data.quantity),
         condition : data.condition ,
         details : data.details ,
         img : img

@@ -42,9 +42,9 @@ const ReviewUs = () => {
      })
     }
     return (
-        <div className="flex items-center justify-center" >
+        <div className="flex items-center justify-center  " >
 
-            <form  onSubmit={handleSubmit(onSubmit)} className="form-control border-1 py-4 px-8 mt-4 shadow-xl ">
+            <form  onSubmit={handleSubmit(onSubmit)} className="form-control border-1 py-4 px-8 mt-4 shadow-xl w-[35%] ">
             <h2 className="text-xl font-bold my-6 text-center">
          REVIEW US__
             </h2>
@@ -60,10 +60,12 @@ const ReviewUs = () => {
           setValue(newValue);
         }}
       />
-         <textarea className="textarea textarea-primary text-lg" rows="5" cols="30"  placeholder="Your Comment" 
-         {...register("comment")}>
-
-         </textarea>
+        {
+            value &&  <textarea className="textarea textarea-primary text-lg" rows="5" cols="30"  placeholder="Your Comment" 
+            {...register("comment")}>
+   
+            </textarea>
+        }
          <input type="submit"  value={"SUBMIT"}  className="btn btn-neutral w-full max-w-xs my-2" />
             </form>
             
