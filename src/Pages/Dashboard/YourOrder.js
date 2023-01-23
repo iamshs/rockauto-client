@@ -18,7 +18,7 @@ if(isLoading){
     return <Loading />
 }
 
-console.log(order)
+
  
     return (
       <div className="overflow-x-auto">
@@ -29,9 +29,10 @@ console.log(order)
             <th className="text-xs">Image</th> 
             <th className="text-xs">Parts Name</th> 
             <th className="text-xs" >Quantity</th> 
+            <th className="text-xs">Price</th>
             <th className="text-xs">Cancel</th>
             <th className="text-xs">Pay</th>
-            <th className="text-xs"></th>
+           
           </tr>
         </thead> 
         <tbody>

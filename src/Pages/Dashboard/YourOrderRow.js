@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const YourOrderRow = ({ i, o,  setDeleteOrder }) => {
-  const { partsName, quantity, partsImg, } = o;
+  const { partsName, quantity, partsImg,_id ,price } = o;
 
   
 
@@ -18,14 +19,15 @@ const YourOrderRow = ({ i, o,  setDeleteOrder }) => {
       </th>
       <th className="text-xs lg:text-lg md:text-lg"> {partsName} </th>
       <td className="text-xs lg:text-lg md:text-lg"> {quantity} </td>
+      <td className="text-xs lg:text-lg md:text-lg"> ${price} </td>
       <td>
-        <label htmlFor="order-modal" onClick={() => setDeleteOrder(o) } className="btn btn-error btn-xs text-[8px] md:text-[12px] lg:text-[12px]">Delete</label>
+        <label htmlFor="order-modal" onClick={() => setDeleteOrder(o) } className="btn btn-error btn-xs text-[8px] px-1 lg:px-3 md:px-3 md:text-[12px] lg:text-[12px]">Delete</label>
 
       </td>
       <td>
-        <button className="btn btn-xs btn-accent text-[8px] md:text-[12px] lg:text-[12px] ">
+        <Link to={`/dashboard/payment/${_id}`} className="btn btn-xs btn-accent text-[8px] md:text-[12px] lg:text-[12px] ">
           Pay
-        </button>
+        </Link>
       </td>
       <td></td>
     </tr>

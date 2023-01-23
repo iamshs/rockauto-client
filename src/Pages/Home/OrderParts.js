@@ -48,7 +48,8 @@ const sendOrder = e => {
         mobile: e.target.mobile.value ,
         address : e.target.address.value ,
         quantity : JSON.parse(availableQuantity) ,
-        partsImg : part.img
+        partsImg : part.img,
+        price : JSON.parse(part.price)
     }
 
     console.log(order)
