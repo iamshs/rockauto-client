@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const useProfile = user =>{
     const [profile , setProfile ] = useState([])
     
-    const email = user.email
+    const email = user?.email
 
     useEffect( ()=>{
      fetch(`http://localhost:5000/profile/${email}` ,{

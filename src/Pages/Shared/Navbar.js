@@ -5,9 +5,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "./Loading";
 
+
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate()
+ 
   if (loading) {
     <Loading />;
   }
@@ -75,6 +77,8 @@ const Navbar = () => {
           </NavLink>
         )}
       </li>
+     
+    
     </>
   );
 

@@ -81,7 +81,7 @@ const CheckOutForm = ({o}) => {
       transactionId : paymentIntent.id
     }
 
-    fetch(`http://localhost:5000/order/${_id}` , {
+    fetch(`http://localhost:5000/paymentOrder/${_id}` , {
       method : 'PATCH' ,
       headers : {
         'content-type' : 'application/json'

@@ -38,6 +38,7 @@ const MyProfile = () => {
                 profession : data.profession ,
                 homeTown : data.homeTown
             }
+
             fetch('http://localhost:5000/profile' , {
                 method : 'POST' ,
                 headers : {
@@ -48,8 +49,9 @@ const MyProfile = () => {
             })
             .then( res => res.json())
             .then( p =>{
-                setLoading(false)
+               
                 if (p.acknowledged === true){
+                    setLoading(false)
                     toast.success('Completed Profile Successfully')
                     reset()
                     
@@ -58,6 +60,26 @@ const MyProfile = () => {
                     toast.error('Unsuccessful attempt ')
                   }
             })
+
+            // fetch(`http://localhost:5000/profile/${user.email}`,{
+            //   method:"PATCH",
+            //   headers:{
+            //     'content-type':'application/json'
+            //   },
+            //   body:JSON.stringify(profile)
+            // })
+            // .then(res=>res.json())
+            // .then(result=>{
+            //   console.log(result)
+            //   if (result.modifiedCount > 0){
+            //     toast.success('Your Profile has updated')
+            //     setLoading(false)
+            //     reset()
+            //   }
+             
+            // })         
+
+
         }
        })
     }

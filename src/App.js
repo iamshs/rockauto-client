@@ -21,6 +21,7 @@ import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import YourOrder from "./Pages/Dashboard/YourOrder";
 import ManageParts from "./Pages/Dashboard/ManageParts";
 import Payment from "./Pages/Dashboard/Payment";
+import AllReview from "./Pages/Dashboard/AllReview";
 
 
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/dashboard/myProfile" element={ <MyProfile /> } />
           <Route path="/dashboard/myOrder" element={ <YourOrder /> } />
           <Route path="/dashboard/reviewUs" element={ <ReviewUs /> } />
+          <Route path="/dashboard/allReview" element={ <AllReview /> } />
           <Route path="/dashboard/payment/:orderId" element={ <Payment /> } />
           <Route path="/dashboard/addParts" element={  <RequireAdmin> <AddProduct /> </RequireAdmin> } />
           <Route path="/dashboard/allUsers" element={ <RequireAdmin> <Users /> </RequireAdmin> } />

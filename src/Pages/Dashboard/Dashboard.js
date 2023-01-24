@@ -60,6 +60,18 @@ const Dashboard = () => {
           REVIEW US
         </NavLink>
       </li>
+          <li>
+        <NavLink
+          to={"/dashboard/allReview"}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-secondary text-sm"
+              : "text-sm font-semibold"
+          }
+        >
+          ALL REVIEW
+        </NavLink>
+      </li>
       { admin &&  <li>
         <NavLink
           to={"/dashboard/addParts"}

@@ -30,7 +30,7 @@ const YourOrderRow = ({ i, o,  setDeleteOrder }) => {
         </Link> }
         {
           (price && paid ) && <div>
-            <span  className="text-primary font-bold text-lg" > Paid </span>
+            <span  className="text-primary font-bold lg:text-lg" > Paid </span>
             <p> transactionId: <span className="text-secondary  font-bold" >{transactionId}</span>  </p>
           </div>
         }

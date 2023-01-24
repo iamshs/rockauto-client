@@ -17,6 +17,9 @@ const OrderParts = () => {
           .then(res=>res.json())
         
       })
+
+      
+
 const handleDisable = e =>{
     const validOrder = e.target.value
     const maxQuantity = part.quantity
@@ -39,7 +42,7 @@ const handleDisable = e =>{
 
 
 const sendOrder = e => {
-   const availableQuantity = e.target.quantity.value
+   const orderedQuantity = e.target.quantity.value
   e.preventDefault()
     const order = {
         name:user?.displayName ,
@@ -47,12 +50,12 @@ const sendOrder = e => {
         partsName: part.name ,
         mobile: e.target.mobile.value ,
         address : e.target.address.value ,
-        quantity : JSON.parse(availableQuantity) ,
+        quantity : orderedQuantity ,
         partsImg : part.img,
-        price : JSON.parse(part.price)
+        price : part.price
     }
 
-    console.log(order)
+    
 
     fetch('http://localhost:5000/order' , {
         method : 'POST' ,
@@ -68,6 +71,19 @@ const sendOrder = e => {
         if (result.insertedId){
             e.target.reset()
             toast.success('You have ordered successfully')
+
+            // const availableQuantity = part.quantity - orderedQuantity
+            // fetch(`http://localhost:5000/parts/${_id}` , {
+            //     method : 'PUT' ,
+            //     headers : {
+            //         'content-type' : 'application/json'
+            //     },
+            //     body : JSON.stringify(availableQuantity)
+            // })
+            // .then(res => res.json())
+            // .then( data => {
+            //     console.log(data)
+            // })
         }
         else{
             toast.error('Unsuccessful attempt')

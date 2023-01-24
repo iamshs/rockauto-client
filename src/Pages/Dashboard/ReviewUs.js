@@ -13,7 +13,7 @@ const ReviewUs = () => {
     const [value , setValue] = useState(null)
     const [profile] = useProfile(user)
 
-    console.log(profile)
+
 
     const onSubmit = async data =>{
    
