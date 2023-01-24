@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import Loading from '../Shared/Loading'
 
 const CheckOutForm = ({o}) => {
   const stripe = useStripe();
@@ -8,7 +9,8 @@ const CheckOutForm = ({o}) => {
   const [success , setSuccess] = useState('')
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState('');
-  const {price , quantity , name , email} = o
+  const [processing , setProcessing] = useState(false)
+  const {price , quantity , name , email , _id} = o
   const totalPrice = price * quantity
 
   
@@ -17,7 +19,6 @@ const CheckOutForm = ({o}) => {
         method: "POST",
         headers: {
          'content-type' : 'application/json'
-          
         },
         body: JSON.stringify({totalPrice})
     })
@@ -28,6 +29,10 @@ const CheckOutForm = ({o}) => {
      }
     })
   } , [totalPrice])
+
+  // if (processing){
+  //   return <Loading />
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +51,7 @@ const CheckOutForm = ({o}) => {
       });
       setCardError(error?.message || '')
       setSuccess('');
+      setProcessing(true)
 
    const {paymentIntent, intentError} = await stripe.confirmCardPayment(
     clientSecret,
@@ -62,11 +68,31 @@ const CheckOutForm = ({o}) => {
   if (intentError){
     setCardError(intentError.message)
     setSuccess('')
+    setProcessing(false)
   }
   else{
+    console.log(paymentIntent)
     setSuccess('Congrats!You paid successfully')
     setCardError('')
     setTransactionId(paymentIntent.id)
+
+    const payment = {
+      order : _id ,
+      transactionId : paymentIntent.id
+    }
+
+    fetch(`http://localhost:5000/order/${_id}` , {
+      method : 'PATCH' ,
+      headers : {
+        'content-type' : 'application/json'
+      },
+      body : JSON.stringify(payment)
+    })
+    .then(res => res.json())
+    .then ( data => {
+      console.log(data)
+      setProcessing(false)
+    })
    
   }
 

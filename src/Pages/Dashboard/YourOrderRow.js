@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const YourOrderRow = ({ i, o,  setDeleteOrder }) => {
-  const { partsName, quantity, partsImg,_id ,price } = o;
+  const { partsName, quantity, partsImg,_id ,price , paid , transactionId } = o;
 
   
 
@@ -25,9 +25,15 @@ const YourOrderRow = ({ i, o,  setDeleteOrder }) => {
 
       </td>
       <td>
-        <Link to={`/dashboard/payment/${_id}`} className="btn btn-xs btn-accent text-[8px] md:text-[12px] lg:text-[12px] ">
+       { ( price && !paid) &&  <Link to={`/dashboard/payment/${_id}`} className="btn btn-xs btn-accent text-[8px] md:text-[12px] lg:text-[12px] ">
           Pay
-        </Link>
+        </Link> }
+        {
+          (price && paid ) && <div>
+            <span  className="text-primary font-bold text-lg" > Paid </span>
+            <p> transactionId: <span className="text-secondary  font-bold" >{transactionId}</span>  </p>
+          </div>
+        }
       </td>
       <td></td>
     </tr>
