@@ -87,7 +87,7 @@ const Login = () => {
             <div className="form-control w-full max-w-xs">
               <input
                 type="password"
-                placeholder="Your Email"
+                placeholder="Your Password"
                 className="input input-bordered w-full max-w-xs"
                 {...register("password", {
                   required: {
