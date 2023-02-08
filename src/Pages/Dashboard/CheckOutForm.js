@@ -15,7 +15,7 @@ const CheckOutForm = ({o}) => {
 
   
   useEffect( () =>{
-    fetch('http://localhost:5000/create-payment-intent',{
+    fetch('https://localhost:5000/create-payment-intent',{
         method: "POST",
         headers: {
          'content-type' : 'application/json'
@@ -30,9 +30,9 @@ const CheckOutForm = ({o}) => {
     })
   } , [totalPrice])
 
-  // if (processing){
-  //   return <Loading />
-  // }
+  if (processing){
+    return <Loading />
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,7 +81,7 @@ const CheckOutForm = ({o}) => {
       transactionId : paymentIntent.id
     }
 
-    fetch(`http://localhost:5000/paymentOrder/${_id}` , {
+    fetch(` https://rockauto-server.vercel.app/paymentOrder/${_id}` , {
       method : 'PATCH' ,
       headers : {
         'content-type' : 'application/json'

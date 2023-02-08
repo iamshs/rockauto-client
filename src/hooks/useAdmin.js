@@ -6,11 +6,11 @@ const useAdmin = (user) => {
 
   useEffect(() => {
     const email = user.email;
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(` https://rockauto-server.vercel.app/user/admin/${email}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+       
       }
     })
     .then((res) => res.json())

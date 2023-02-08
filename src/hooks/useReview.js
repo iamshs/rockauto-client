@@ -5,11 +5,8 @@ const useReview = () =>{
    const [review , setReview ] = useState([])
 
    useEffect( ()=>{
-    fetch('http://localhost:5000/review' ,{
-        method : 'GET' ,
-        headers:{
-            authorization: ` Bearer ${localStorage.getItem('accessToken')}`
-        }
+    fetch(' https://rockauto-server.vercel.app/review' ,{
+        method : 'GET' 
     } )
     .then(res => res.json())
     .then(data =>{

@@ -7,15 +7,10 @@ const useProfile = user =>{
     const email = user?.email
 
     useEffect( ()=>{
-     fetch(`http://localhost:5000/profile/${email}` ,{
-         method : 'GET' ,
-         headers:{
-             authorization: ` Bearer ${localStorage.getItem('accessToken')}`
-         }
-     } )
+     fetch(` https://rockauto-server.vercel.app/profile/${email}`)
      .then(res => res.json())
      .then(data =>{
-         console.log(data)
+        
          setProfile(data)
      })
     } , [email])

@@ -6,7 +6,7 @@ import ManageOrderDeleteModal from './ManageOrderDeleteModal';
 
 const ManageOrder = () => {
   const [deleteManageOrder , setDeleteManageOrder] = useState(null)
-    const {data : order , isLoading ,refetch } = useQuery({ queryKey: ['orders'], queryFn: () => fetch('http://localhost:5000/orders')
+    const {data : order , isLoading ,refetch } = useQuery({ queryKey: ['orders'], queryFn: () => fetch(' https://rockauto-server.vercel.app/orders')
      .then(res=>res.json())
 })
 

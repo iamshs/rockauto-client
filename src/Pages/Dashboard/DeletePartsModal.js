@@ -5,11 +5,9 @@ const DeletePartsModal = ({refetch , setDeleteParts , deleteParts}) => {
      const {_id , name} = deleteParts
     const handleDeleteParts = _id =>{
        
-        fetch(`http://localhost:5000/parts/${_id}` ,{
+        fetch(` https://rockauto-server.vercel.app/parts/${_id}` ,{
             method : 'DELETE' ,
-            headers :{
-              authorization : ` Bearer ${ localStorage.getItem( 'accessToken' ) }`
-            }
+            
           })
           .then( res => res.json() )
           .then( data => {

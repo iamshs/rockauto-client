@@ -17,11 +17,9 @@ const Payment = () => {
   } = useQuery({
     queryKey: ["order", orderId],
     queryFn: () =>
-      fetch(`http://localhost:5000/order/${orderId}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        }
+      fetch(` https://rockauto-server.vercel.app/order/${orderId}`, {
+        method: "GET"
+      
       }).then((res) => res.json()),
   });
 

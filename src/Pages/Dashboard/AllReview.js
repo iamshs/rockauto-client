@@ -17,7 +17,7 @@ const AllReview = () => {
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-4  gap-2'>
          {
             review.slice(0,8).map( r => <div key={r._id} className="card w-96  bg-base-100 text-neutral-content shadow-md">
-            <div className="card-body ">
+            <div className="card-body w-[300px] ">
               <div className='flex items-center'>
               <div className="avatar mr-3">
                  <div className="w-8 rounded-full">

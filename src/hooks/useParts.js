@@ -4,9 +4,9 @@ import { useQuery } from "@tanstack/react-query"
 const useParts = () =>{
 
     const {data:parts , isLoading , isError,error , refetch} = useQuery({
-        queryKey:['parts'],
+        queryKey:['partsData'],
         queryFn: () =>
-          fetch("http://localhost:5000/parts")
+          fetch(" https://rockauto-server.vercel.app/parts")
           .then(res=>res.json())
         
       })

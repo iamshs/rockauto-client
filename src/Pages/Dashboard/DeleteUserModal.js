@@ -7,11 +7,9 @@ const DeleteUserModal = ({refetch , deleteUser , setDeleteUser}) => {
 
 const handleUserDelete = email =>{
      
-    fetch(`http://localhost:5000/user/${email}` , {
-        method: 'Delete' ,
-        headers : {
-            authorization : ` Bearer ${localStorage.getItem('accessToken')}`
-        }
+    fetch(` https://rockauto-server.vercel.app/user/${email}` , {
+        method: 'Delete' 
+       
     })
     .then( res => res.json())
     .then( data => {

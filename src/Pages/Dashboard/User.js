@@ -7,11 +7,8 @@ const User = ({ u , i , refetch ,setDeleteUser }) => {
 
 
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
-      method:'PUT',
-      headers:{
-        authorization:` Bearer ${localStorage.getItem('accessToken')} `
-      }
+    fetch(` https://rockauto-server.vercel.app/user/admin/${email}`, {
+      method:'PUT'
     })
     .then( res => {
       if (res.status === 403){

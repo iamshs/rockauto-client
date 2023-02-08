@@ -10,7 +10,7 @@ const Users = () => {
     const {data : users , isLoading , isError,error,refetch} = useQuery({
         queryKey:['user'],
         queryFn: () =>
-          fetch("http://localhost:5000/user")
+          fetch(" https://rockauto-server.vercel.app/user")
           .then(res=>res.json())
         
       })

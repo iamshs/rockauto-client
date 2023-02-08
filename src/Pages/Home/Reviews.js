@@ -1,9 +1,6 @@
 import { Rating } from '@mui/material';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import auth from '../../firebase.init';
-import useProfile from '../../hooks/useProfile';
 import useReview from '../../hooks/useReview';
 
 
@@ -18,7 +15,7 @@ const Reviews = () => {
           <h1 className='lg:text-4xl md:text-3xl   md:px-10 px-5 mb-10   text-2xl  font-bold text-black'>They All Liked Our Service</h1>
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-4  gap-2'>
          {
-            review.slice(0,8).map( r => <div key={r._id} className="card w-96  bg-base-100 text-neutral-content shadow-md">
+            review.slice(0,8).map( r => <div key={r._id} className="card w-[350px]  bg-base-100 text-neutral-content shadow-md">
             <div className="card-body ">
               <div className='flex items-center'>
               <div className="avatar mr-3">

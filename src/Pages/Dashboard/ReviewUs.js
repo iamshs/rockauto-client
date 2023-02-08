@@ -23,11 +23,10 @@ const ReviewUs = () => {
         comment: data.comment,
         avatar : profile.photoURL
      }
-     fetch('http://localhost:5000/review' , {
+     fetch(' https://rockauto-server.vercel.app/review' , {
         method :'POST' ,
         headers : {
-            'content-type' : 'application/json' ,
-            authorization : ` Bearer ${localStorage.getItem('accessToken')}`
+            'content-type' : 'application/json' 
         },
         body: JSON.stringify(review)
      })

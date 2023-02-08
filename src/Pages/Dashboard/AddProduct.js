@@ -35,11 +35,11 @@ const AddProduct = () => {
         details : data.details ,
         img : img
       }
-      fetch('http://localhost:5000/parts' , {
+      fetch(' https://rockauto-server.vercel.app/parts' , {
         method:'POST' ,
         headers :{
           'content-type' : 'application/json' ,
-          authorization : ` Bearer ${localStorage.getItem('accessToken')} `
+        
         },
         body : JSON.stringify(parts)
       })

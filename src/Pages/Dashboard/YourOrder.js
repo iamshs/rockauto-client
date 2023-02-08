@@ -10,7 +10,7 @@ const YourOrder = () => {
     const [user] = useAuthState(auth)
     const [deleteOrder , setDeleteOrder] = useState(null)
     const email = user?.email
-    const {data : order, isLoading , refetch } = useQuery({ queryKey: ['order'], queryFn: () => fetch(`http://localhost:5000/orders/${email}`)
+    const {data : order, isLoading , refetch } = useQuery({ queryKey: ['order'], queryFn: () => fetch(` https://rockauto-server.vercel.app/orders/${email}`)
     .then(res=>res.json())
 })
 

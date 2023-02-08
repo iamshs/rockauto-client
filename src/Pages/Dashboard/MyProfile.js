@@ -39,11 +39,10 @@ const MyProfile = () => {
                 homeTown : data.homeTown
             }
 
-            fetch('http://localhost:5000/profile' , {
+            fetch(' https://rockauto-server.vercel.app/profile' , {
                 method : 'POST' ,
                 headers : {
-                    'content-type' : 'application/json' ,
-                    authorization : ` Bearer ${localStorage.getItem('accessToken')} `
+                    'content-type' : 'application/json' 
                 },
                 body: JSON.stringify(profile)
             })
@@ -61,7 +60,7 @@ const MyProfile = () => {
                   }
             })
 
-            // fetch(`http://localhost:5000/profile/${user.email}`,{
+            // fetch(` https://rockauto-server.vercel.app/profile/${user.email}`,{
             //   method:"PATCH",
             //   headers:{
             //     'content-type':'application/json'

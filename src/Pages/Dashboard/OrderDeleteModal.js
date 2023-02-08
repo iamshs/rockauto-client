@@ -6,11 +6,8 @@ const OrderDeleteModal = ({refetch , setDeleteOrder , deleteOrder}) => {
     const {_id} = deleteOrder
 
     const handleUserOrderDelete = (id) => {
-        fetch(`http://localhost:5000/orders/${id}` ,{
-          method : 'DELETE' ,
-          headers :{
-            authorization : ` Bearer ${ localStorage.getItem( 'accessToken' ) }`
-          }
+        fetch(` https://rockauto-server.vercel.app/orders/${id}` ,{
+          method : 'DELETE' 
         })
         .then( res => res.json() )
         .then( data => {
